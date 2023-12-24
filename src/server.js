@@ -13,7 +13,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/api/whatsapp', whatsappRouter);
 
 // Iniciar o servidor
-
 app.listen(PORT, () => {
 //    console.log(`Servidor rodando na porta ${PORT}`);
 });

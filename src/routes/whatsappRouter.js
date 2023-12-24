@@ -20,6 +20,7 @@ router.post('/mensagens-recebidas', async (req, res) => {
 });
 
 router.get('/mensagens-recebidas', (req, res) => {
+  //Token de verificação criada no painel do WhatsApp
   const VERIFY_TOKEN = 'meutoken';
 
   console.log('Requisição recebida get:', req.body);
@@ -46,6 +47,5 @@ router.get('/', (req, res) => {
   // Renderize sua página inicial aqui
   res.send('Página Inicial');
 });
-
 
 module.exports = router;
