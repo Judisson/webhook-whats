@@ -7,6 +7,9 @@ router.post('/mensagens-recebidas', async (req, res) => {
 
   const formattedJson = JSON.stringify(req.body, null, 2);
   console.log(formattedJson);
+  console.log("\n")
+  console.log("--------------------------------------------------------------------------------------")
+  console.log("\n")
 
   try {
     await axios.post('http://localhost:3332/mensagens-recebidas-data', req.body);
