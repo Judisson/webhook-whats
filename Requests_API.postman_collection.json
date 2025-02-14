@@ -1,0 +1,185 @@
+{
+	"info": {
+		"_postman_id": "ade69653-4f70-410f-9b13-01a1093b56ad",
+		"name": "Teste Webhook",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19470845"
+	},
+	"item": [
+		{
+			"name": "Teste Webhook Glitch",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"mensagem\": \"Teste do webhook 1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{urlGlitch}}/webhook",
+					"host": [
+						"{{urlGlitch}}"
+					],
+					"path": [
+						"webhook"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Teste Webhook rgrok",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"mensagem\": \"Teste do webhook 1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{rgrok}}/mensagens-recebidas",
+					"host": [
+						"{{rgrok}}"
+					],
+					"path": [
+						"mensagens-recebidas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{urlGlitch}}",
+					"host": [
+						"{{urlGlitch}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Enviando Msg p/ Cliente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3332/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3332",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Enviando para Servidor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"chatId\" : \"190598850804966_556196985714\",\r\n\"messages\": {\r\n    \"messageId\": \"messageId\",\r\n    \"from\": \"15550636210\",\r\n    \"to\": \"5561996985714\",\r\n    \"timestamp\": \"1970-01-20T17:18:06.128+00:00\",\r\n    \"text\": {\r\n        \"body\": \"Olá, mundo!1\"\r\n    },\r\n    \"type\": \"text\",\r\n    \"contact_name\": \"João\",\r\n    \"contact_number\": \"5561996985714\",\r\n    \"fields\": \"algum campo\"\r\n}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3332/menssages",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3332",
+					"path": [
+						"menssages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Status Mensagem",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n    {\r\n        \"chatId\": \"190598850804966_556196985714\",\r\n        \"statuses\": [\r\n            {\r\n                \"status\": \"sent\",\r\n                \"timestamp\": 1703952309,\r\n                \"recipient_id\": 556196985714,\r\n                \"conversation\": {\r\n                    \"id\": \"126283a9507716cc4f053d7d25c9b269\",\r\n                    \"expiration_timestamp\": \"1703983860\",\r\n                    \"origin\": {\r\n                        \"type\": \"utility\"\r\n                    }\r\n                },\r\n                \"pricing\": {\r\n                    \"billable\": true,\r\n                    \"pricing_model\": \"CBP\",\r\n                    \"category\": \"utility\"\r\n                },\r\n                \"messageId\": \"wamid.HBgMNTU2MTk2OTg1NzE0FQIAEhggRDE1MTQxQkNDRUYwMjYxMzRDMjAwNDcxNEQ3NzRGNzAA\"\r\n            }\r\n        ]\r\n    }\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3332/statuses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3332",
+					"path": [
+						"statuses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Response Mensagem  gpt",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    // \"resposta\": \"Olá, como posso ajudar?\",\r\n    \"contact_number\": \"556198719320\",\r\n    \"response_question\": \"Olá, como posso ajudar?\",\r\n    \"type\": \"text\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3332/response-message",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3332",
+					"path": [
+						"response-message"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
